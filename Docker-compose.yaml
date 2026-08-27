@@ -1,0 +1,57 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my-app
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: Development
+
+      # PostgreSQL
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/appdb
+
+      # Redis
+      REDIS_URL: redis://redis:6379
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    restart: unless-stopped
+
+    volumes:
+      - redis_data:/data
+
+    command: redis-server --appendonly yes
+
+  postgres:
+    image: postgres:17-alpine
+    container_name: postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: appdb
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d appdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+  redis_data:
