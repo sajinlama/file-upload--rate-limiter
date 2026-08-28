@@ -1,4 +1,6 @@
-import { Pool } from 'pg';
+import { Pool } from '../../node_modules/@types/pg/index.js';
+import dotenv from "dotenv";
+dotenv.config()
 
 const connectionString = process.env.DATABASE_URL;
 

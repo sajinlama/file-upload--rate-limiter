@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: my-app
     ports:
-      - "5000:5000"
+      - "5001:5000"
     environment:
       NODE_ENV: Development
 
@@ -28,6 +28,9 @@ services:
     container_name: redis
     restart: unless-stopped
 
+    ports:
+      - "6380:6379"
+
     volumes:
       - redis_data:/data
 
@@ -37,6 +40,9 @@ services:
     image: postgres:17-alpine
     container_name: postgres
     restart: unless-stopped
+
+    ports:
+      - "5433:5432"
 
     environment:
       POSTGRES_USER: postgres

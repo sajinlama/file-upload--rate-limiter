@@ -8,12 +8,13 @@ const userController = asyncHandler(
     const validData = userSchema.parse(req.body);
 
     const createUser = await newUSer(validData);
+    console.log(createUser)
 
 
     return res.status(201).json({
       success: true,
       message: "User created successfully",
-      data: validData,
+      data: createUser,
     });
   }
 );
