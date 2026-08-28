@@ -1,15 +1,14 @@
-import express from "express";
-import multer from "multer"
-const PORT = 5001;
-const app = express();
+import dotenv from "dotenv"
+import app from "./app.js";
 
-app.get("/", (req, res) => {
-  res.status(200).json({
-    message: "welcome",
-    success: true,
+dotenv.config()
+const PORT =process.env.PORT || 5000;
+
+const startServer = () => {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
   });
-});
+};
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+
+startServer()
