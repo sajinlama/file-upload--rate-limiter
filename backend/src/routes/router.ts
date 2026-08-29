@@ -7,6 +7,6 @@ const router = Router();
 
 router.post("/addUser",userController)
 
-// router.post("/uploads", upload,uploadImage)
+router.post("/upload", upload.single("image"),uploadImage)
 
 export default router;

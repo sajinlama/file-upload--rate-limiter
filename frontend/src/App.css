@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f7f6f2; /* Soft warm linen */
+  color: #2d312e; /* Muted deep forest/charcoal */
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e7e5df;
+  box-shadow: 0 12px 30px -10px rgba(45, 49, 46, 0.06), 0 4px 12px -4px rgba(45, 49, 46, 0.03);
+  width: 100%;
+  max-width: 440px;
+  padding: 36px 32px;
+}
+
+.card-title {
+  margin: 0 0 8px 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f2421;
+  text-align: center;
+  letter-spacing: -0.3px;
+}
+
+.card-subtitle {
+  margin: 0 0 24px 0;
+  font-size: 14px;
+  color: #6b726d;
+  text-align: center;
+}
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.step-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #4a6b57; /* Deep Sage */
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #3b423d;
+}
+
+.input-text {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 14px;
+  color: #2d312e;
+  background-color: #faf9f6;
+  border: 1.5px solid #d9d6cd;
+  border-radius: 9px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input-text::placeholder {
+  color: #9ea39e;
+}
+
+.input-text:focus {
+  background-color: #ffffff;
+  border-color: #587b66; /* Sage accent */
+  box-shadow: 0 0 0 3px rgba(88, 123, 102, 0.15);
+}
+
+.file-dropzone {
+  border: 2px dashed #d5d1c8;
+  border-radius: 12px;
+  padding: 22px;
+  text-align: center;
+  background-color: #fbfbfa;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.file-dropzone:hover {
+  border-color: #587b66;
+  background-color: #f2f6f3;
+}
+
+.file-dropzone-text {
+  font-size: 13px;
+  color: #6b726d;
+  margin-top: 6px;
+}
+
+.file-selected-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2d312e;
+  word-break: break-all;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 11px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #3d5a49; /* Earthy Forest Green */
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #314a3b;
+}
+
+.btn-primary:active {
+  transform: scale(0.99);
+}
+
+.btn-primary:disabled {
+  background-color: #b5beb7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #eae7df;
+  margin: 26px 0;
+}
