@@ -4,6 +4,9 @@
     "moduleResolution": "NodeNext",
     "target": "ESNext",
 
+    "rootDir": "./src",
+    "outDir": "./dist",
+
     "types": ["node"],
 
     "sourceMap": true,
@@ -19,5 +22,7 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true
-  }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }
